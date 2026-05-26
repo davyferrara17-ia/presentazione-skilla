@@ -29,7 +29,7 @@
             overflow: hidden;
         }
 
-        /* --- SCHERMATA INIZIALE (SPLASH SCREEN) --- */
+        /* --- SCHERMATA INIZIALE --- */
         #splash-screen {
             position: fixed;
             top: 0; left: 0; width: 100%; height: 100%;
@@ -130,7 +130,7 @@
             z-index: 100;
         }
 
-        /* --- SLIDER E CONTENUTI --- */
+        /* --- SLIDER --- */
         .slides-wrapper {
             display: flex;
             width: 500%; 
@@ -142,7 +142,7 @@
             width: 20%;
             height: 100%;
             box-sizing: border-box;
-            padding: 50px 20px 20px 20px;
+            padding: 45px 20px 20px 20px;
             display: flex;
             flex-direction: column;
             justify-content: flex-start;
@@ -151,7 +151,7 @@
         .slide-header {
             border-bottom: 2px solid var(--primary-blue);
             padding-bottom: 8px;
-            margin-bottom: 20px;
+            margin-bottom: 15px;
         }
         .slide-code { font-family: 'Courier New', monospace; color: var(--dark-purple); font-size: 0.7rem; font-weight: bold; }
         .slide-title { font-size: 1.1rem; font-weight: bold; margin: 3px 0 0 0; color: var(--primary-blue); }
@@ -226,6 +226,9 @@
         }
         .dot { width: 6px; height: 6px; background: rgba(0,0,0,0.15); border-radius: 50%; transition: all 0.2s; }
         .dot.active { background: var(--primary-blue); width: 14px; border-radius: 3px; }
+
+        /* Timeline minimal header */
+        .mini-timeline { font-size: 0.65rem; color: var(--text-muted); text-align: center; margin-top: -10px; margin-bottom: 15px; font-family: monospace; }
     </style>
 </head>
 <body>
@@ -250,92 +253,104 @@
             <div class="slides-wrapper" id="slider">
                 
                 <div class="slide">
+                    <div class="mini-timeline">[ 09 Mar - 29 Giu ]</div>
                     <div class="slide-header">
-                        <div class="slide-code">> INITIAL_BOOT_LOG</div>
-                        <h2 class="slide-title">12 Settimane Dentro Skilla</h2>
+                        <div class="slide-code">01. THE BEGINNING</div>
+                        <h2 class="slide-title">L'Impatto Iniziale</h2>
                     </div>
                     <div class="content-card">
-                        <div class="card-header">📍 System Initialization</div>
-                        <p class="card-body">9 Marzo: Ingresso in un ambiente del tutto nuovo. Spaesamento iniziale e prime analisi.</p>
+                        <div class="card-header">📍 Spaesamento</div>
+                        <p class="card-body">Ingresso in un ambiente nuovo. Basi costruite attraverso i training obbligatori aziendali.</p>
                     </div>
                     <div class="content-card">
-                        <div class="card-header">🧠 Corsi e Primi Ostacoli</div>
-                        <p class="card-body">I training obbligatori forniscono la base di compliance. Primo impatto critico e blocco operativo con il chatbot di Arianna.</p>
+                        <div class="card-header">🧠 Il Ruolo dei Feedback</div>
+                        <p class="card-body">Testare e analizzare criticamente i simulatori degli altri è stata la chiave per capirne le logiche tecniche.</p>
                     </div>
                     <div class="content-card">
-                        <div class="card-header">🚀 Innovazione Reale</div>
-                        <p class="card-body">Dietro la superficie dell'e-learning emerge un'enorme struttura metodologica e una profonda cura del dettaglio.</p>
+                        <div class="card-header">⚙️ Progettazione Nascosta</div>
+                        <p class="card-body">Dietro l'interfaccia utente c'è un'enorme struttura metodologica e una cura maniacale del dettaglio.</p>
                     </div>
                 </div>
 
                 <div class="slide">
+                    <div class="mini-timeline">[ 09 Mar - 29 Giu ]</div>
                     <div class="slide-header">
-                        <div class="slide-code">> CORE_TEAM_DATABASE</div>
-                        <h2 class="slide-title">Il Team AI & Leadership</h2>
+                        <div class="slide-code">02. THE CHALLENGES</div>
+                        <h2 class="slide-title">Ostacoli e Progetti</h2>
                     </div>
                     <div class="content-card">
-                        <div class="card-header">💻 Competenza Condivisa</div>
-                        <p class="card-body"><strong>Federica:</strong> Interventi costanti per risolvere i blocchi tecnici.<br><strong>Martina & Arianna:</strong> Supporto metodologico per la logica dei tutor e dei simulatori.</p>
+                        <div class="card-header">🤖 L'Ostacolo Alice</div>
+                        <p class="card-body">Istruzioni riscritte ed errori, risolti comprendendo che a volte la semplificazione logica vince sulla complessità.</p>
                     </div>
                     <div class="content-card">
-                        <div class="card-header">👑 Strategic Guidance</div>
-                        <p class="card-body"><strong>Silvia:</strong> Leadership straordinaria. Capacità nativa di mantenere l'equilibrio tra obiettivi aziendali, tecnologia e coordinamento delle persone.</p>
+                        <div class="card-header">🌌 L'Orchestratore</div>
+                        <p class="card-body">Il passaggio alla "cabina di regia". Un ecosistema tecnico di livello superiore da padroneggiare.</p>
+                    </div>
+                    <div class="content-card">
+                        <div class="card-header">⚖️ Focus & Sintesi</div>
+                        <p class="card-body">Gestire Tirocinio, Tesi e Master HR ha ispirato il Public Speaking: l'urgenza di tagliare il rumore e focalizzare gli obiettivi.</p>
                     </div>
                 </div>
 
                 <div class="slide">
+                    <div class="mini-timeline">[ 09 Mar - 29 Giu ]</div>
                     <div class="slide-header">
-                        <div class="slide-code">> RUNTIME_EXCEPTION</div>
-                        <h2 class="slide-title">Evoluzione e Sfide</h2>
+                        <div class="slide-code">03. PARALLEL GROWTH</div>
+                        <h2 class="slide-title">Gli SkillaLab</h2>
                     </div>
                     <div class="content-card">
-                        <div class="card-header">🤖 Il Nodo di Alice</div>
-                        <p class="card-body">Innumerevoli riscritture di prompt, cicli continui di test, instabilità strutturali ed errori logici sul singolo personaggio.</p>
+                        <div class="card-header">🎭 Valvole di Sfogo</div>
+                        <p class="card-body">Sessioni interattive, divertenti e fondamentali per bilanciare il carico mentale dello sviluppo tecnico.</p>
                     </div>
                     <div class="content-card">
-                        <div class="card-header">🌌 Lo Step Successivo</div>
-                        <p class="card-body">Il passaggio all'Orchestratore: l'ingresso in un vero e proprio ecosistema complesso e diversificato rispetto ai singoli simulatori.</p>
+                        <div class="card-header">📄 Il Laboratorio CV</div>
+                        <p class="card-body">L'importanza di far trasparire la propria autenticità su carta, superando la freddezza dei soli dati.</p>
                     </div>
                     <div class="content-card">
-                        <div class="card-header">💡 Sintesi e Focus</div>
-                        <p class="card-body">La sovrapposizione tra Tesi e Master HR diventa lo stimolo per il Public Speaking: imparare a isolare i punti chiave ed esporre l'essenziale.</p>
+                        <div class="card-header">🎙️ Public Speaking</div>
+                        <p class="card-body">Costruire impatto in 5 minuti: allenamento pratico su come isolare l'essenziale per la platea.</p>
                     </div>
                 </div>
 
                 <div class="slide">
+                    <div class="mini-timeline">[ 09 Mar - 29 Giu ]</div>
                     <div class="slide-header">
-                        <div class="slide-code">> DATA_OUTPUT_SUMMARY</div>
-                        <h2 class="slide-title">System Takeaways</h2>
+                        <div class="slide-code">04. TAKEAWAYS</div>
+                        <h2 class="slide-title">Cosa Mi Porto Via</h2>
                     </div>
                     <div class="content-card">
-                        <div class="card-header">🛠️ Demistificazione dell'AI</div>
-                        <p class="card-body">Sviluppo di una comprensione logica concreta. L'AI perde l'alone magico e diventa pura architettura.</p>
+                        <div class="card-header">🛠️ Visione Concreta</div>
+                        <p class="card-body">L'AI è una disciplina reale fatta di logica e limiti, non di magia.</p>
                     </div>
                     <div class="content-card">
-                        <div class="card-header">🎭 Esperienza SkillaLab</div>
-                        <p class="card-body">Sessioni interattive stimolanti e divertenti. Momenti ideali di effettivo confronto e bilanciamento mentale.</p>
+                        <div class="card-header">📉 L'Analisi dei Limiti</div>
+                        <p class="card-body">Individuare i punti di rottura di un sistema è l'unica analisi tecnica che permette di capirne i vincoli.</p>
                     </div>
                     <div class="content-card">
-                        <div class="card-header">🤝 Inclusione Professionale</div>
-                        <p class="card-body">Valorizzazione della risorsa all'interno del team. Coinvolgimento paritetico e superamento dello status stereotipato di stagista.</p>
+                        <div class="card-header">🤝 Trattamento Paritetico</div>
+                        <p class="card-body">Essere considerato dal primo giorno una risorsa operativa per il progetto e non un semplice "stagista".</p>
                     </div>
                 </div>
 
                 <div class="slide">
+                    <div class="mini-timeline">[ 09 Mar - 29 Giu ]</div>
                     <div class="slide-header">
-                        <div class="slide-code">> TERMINAL_SHUTDOWN</div>
-                        <h2 class="slide-title">System Update Complete</h2>
+                        <div class="slide-code">05. THE PEOPLE</div>
+                        <h2 class="slide-title">Il Team AI</h2>
                     </div>
-                    <div class="content-card" style="border-color: var(--primary-blue);">
-                        <div class="card-header" style="color: var(--primary-blue);">🎯 Consolidamento Finale</div>
-                        <p class="card-body">Conclusione del log con una direzione professionale nitida, strutturata e consapevole.</p>
+                    <div class="content-card">
+                        <div class="card-header">💻 Supporto Tecnico</div>
+                        <p class="card-body"><strong>Federica, Martina, Arianna:</strong> Supporto costante e spiegazione chiara del *perché* dietro alle logiche tecniche.</p>
                     </div>
-                    <div class="content-card" style="background: rgba(13, 110, 253, 0.05);">
+                    <div class="content-card">
+                        <div class="card-header">👑 Esempio di Leadership</div>
+                        <p class="card-body"><strong>Silvia:</strong> Leadership guidata da un'energia inesauribile e grande schiettezza nella gestione reale di progetti e team.</p>
+                    </div>
+                    <div class="content-card" style="background: rgba(13, 110, 253, 0.05); margin-top: 15px; border-color: var(--primary-blue);">
                         <p class="card-body" style="text-align: center; font-weight: bold; color: var(--primary-blue);">
-                            Grazie Silvia, Federica, Arianna & Martina.<br>Grazie Skilla.
+                            Grazie a tutto il team.<br>Grazie Skilla.
                         </p>
                     </div>
-                    <p style="text-align: center; font-family: monospace; font-size: 0.8rem; color: var(--primary-blue); font-weight: bold; margin-top: 20px;">STATUS: SYSTEM STABLE [100%]</p>
                 </div>
 
             </div>
@@ -357,7 +372,6 @@
 </div>
 
 <script>
-    // Funzione per nascondere lo Splash Screen e mostrare la presentazione
     function startPresentation() {
         const splash = document.getElementById('splash-screen');
         const mainContent = document.getElementById('main-content');
@@ -366,10 +380,9 @@
         
         setTimeout(() => {
             mainContent.classList.add('visible');
-        }, 300); // Piccolo ritardo per un ingresso fluido
+        }, 300); 
     }
 
-    // Logica Slider e Mano
     let currentSlide = 0;
     const totalSlides = 5;
     const slider = document.getElementById('slider');
