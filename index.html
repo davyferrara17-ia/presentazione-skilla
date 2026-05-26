@@ -6,20 +6,20 @@
     <title>Davide - Presentazione Finale Skilla</title>
     <style>
         :root {
-            --bg-color: #050514; 
+            --bg-color-external: #f0f8ff; /* Azzurro chiarissimo Skilla */
+            --bg-color-phone: #ffffff; /* Sfondo bianco telefono */
             --primary-blue: #0d6efd; 
             --glow-cyan: #00e5ff; 
             --dark-purple: #4a00e0; 
-            --text-white: #f8f9fa; 
-            --text-muted: #a0aec0; 
+            --text-black: #000000; 
+            --text-muted: #6c757d; 
+            --text-white: #ffffff;
         }
 
         body, html {
             margin: 0; padding: 0; width: 100%; height: 100%;
-            background: linear-gradient(-45deg, #050514, #0a0b1e, #130930, #09122b);
-            background-size: 400% 400%;
-            animation: gradientBG 15s ease infinite;
-            color: var(--text-white);
+            background-color: var(--bg-color-external);
+            color: var(--text-black);
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             display: flex;
             flex-direction: column;
@@ -29,110 +29,95 @@
             overflow: hidden;
         }
 
-        @keyframes gradientBG { 0% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } 100% { background-position: 0% 50%; } }
-
-        /* DEVICE CONTAINER & MOCKUP */
-        .presentation-container {
+device-container {
             display: flex;
             flex-direction: column;
             align-items: center;
             gap: 20px;
         }
 
-        .phone-container {
-            width: 340px;
-            height: 620px;
-            background: #000;
-            border: 12px solid #1e1e2f;
-            border-radius: 40px;
+        .phone-mockup {
+            width: 320px;
+            height: 600px;
+            background: #fff;
+            border: 10px solid #2c2c3e;
+            border-radius: 35px;
             position: relative;
-            box-shadow: 0 0 40px rgba(0, 229, 255, 0.25), 0 20px 50px rgba(0,0,0,0.8);
+            box-shadow: 0 10px 40px rgba(0,0,0,0.5);
             overflow: hidden;
         }
 
-        /* Schermo interno */
         .phone-screen {
             width: 100%;
             height: 100%;
-            background: var(--bg-color);
+            background: var(--bg-color-phone);
             position: relative;
             overflow: hidden;
         }
 
-        /* Camera notch dinamico */
-        .notch {
-            width: 120px; height: 25px; background: #1e1e2f;
+notch {
+            width: 110px; height: 22px; background: #2c2c3e;
             position: absolute; top: 0; left: 50%; transform: translateX(-50%);
-            border-bottom-left-radius: 15px; border-bottom-right-radius: 15px;
+            border-bottom-left-radius: 12px; border-bottom-right-radius: 12px;
             z-index: 100;
         }
 
-        /* SLIDER ENGINE */
-        .slides-wrapper {
+slides-wrapper {
             display: flex;
-            width: 500%; /* 5 slide totali */
+            width: 500%; 
             height: 100%;
-            transition: transform 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+            transition: transform 0.5s ease-in-out;
         }
 
         .slide {
             width: 20%;
             height: 100%;
             box-sizing: border-box;
-            padding: 50px 25px 30px 25px;
+            padding: 40px 20px 20px 20px;
             display: flex;
             flex-direction: column;
             justify-content: flex-start;
-            position: relative;
         }
 
-        /* HEADER INTERNO DELLE SLIDE */
-        .slide-header {
-            border-bottom: 1px solid rgba(0, 229, 255, 0.2);
-            padding-bottom: 10px;
-            margin-bottom: 25px;
+slide-header {
+            border-bottom: 2px solid var(--primary-blue);
+            padding-bottom: 8px;
+            margin-bottom: 20px;
         }
-        .slide-code { font-family: 'Courier New', monospace; color: var(--glow-cyan); font-size: 0.8rem; font-weight: bold; }
-        .slide-title { font-size: 1.3rem; font-weight: bold; margin: 5px 0 0 0; color: var(--text-white); text-shadow: 0 0 10px rgba(0,229,255,0.2); }
+        .slide-code { font-family: 'Courier New', monospace; color: var(--dark-purple); font-size: 0.7rem; font-weight: bold; }
+        .slide-title { font-size: 1.1rem; font-weight: bold; margin: 3px 0 0 0; color: var(--primary-blue); }
 
-        /* BLOCCHI DI CONTENUTO SMARTPHONE */
-        .content-card {
-            background: rgba(74, 0, 224, 0.1);
-            border: 1px solid rgba(13, 110, 253, 0.3);
-            border-radius: 12px;
-            padding: 15px;
-            margin-bottom: 15px;
-            backdrop-filter: blur(5px);
+content-card {
+            background: rgba(13, 110, 253, 0.05);
+            border: 1px solid rgba(13, 110, 253, 0.2);
+            border-radius: 10px;
+            padding: 12px;
+            margin-bottom: 12px;
         }
-        .card-header { font-weight: bold; font-size: 0.9rem; color: var(--glow-cyan); margin-bottom: 5px; display: flex; align-items: center; gap: 8px;}
-        .card-body { font-size: 0.85rem; color: var(--text-muted); line-height: 1.4; margin: 0; }
+        .card-header { font-weight: bold; font-size: 0.8rem; color: var(--dark-purple); margin-bottom: 4px; display: flex; align-items: center; gap: 6px;}
+        .card-body { font-size: 0.75rem; color: var(--text-black); line-height: 1.3; margin: 0; }
 
-        /* CONTROLLI ESTERNI (BOTTONI) */
-        .controls {
+controls {
             display: flex;
-            gap: 20px;
+            gap: 15px;
             z-index: 10;
         }
 
         .nav-btn {
-            background: rgba(13, 110, 253, 0.2);
-            border: 2px solid var(--primary-blue);
-            color: var(--text-white);
-            padding: 12px 25px;
-            border-radius: 25px;
+            background: rgba(13, 110, 253, 0.1);
+            border: 1.5px solid var(--primary-blue);
+            color: var(--primary-blue);
+            padding: 10px 20px;
+            border-radius: 20px;
             cursor: pointer;
             font-weight: bold;
-            font-size: 0.9rem;
-            transition: all 0.3s ease;
-            outline: none;
-            box-shadow: 0 0 15px rgba(13, 110, 253, 0.2);
+            font-size: 0.8rem;
+            transition: all 0.2s ease;
         }
 
-        .nav-btn:hover:not(:disabled) {
-            background: var(--glow-cyan);
-            color: #000;
-            border-color: var(--glow-cyan);
-            box-shadow: 0 0 20px var(--glow-cyan);
+        .nav-btn:hover {
+            background: var(--primary-blue);
+            color: #fff;
         }
 
         .nav-btn:disabled {
@@ -141,56 +126,46 @@
             border-color: var(--text-muted);
         }
 
-        /* --- ANIMAZIONE DEL DITO VIRTUALE (SWIPE) --- */
-        .virtual-finger {
+        /* --- ANIMAZIONE MANO REALISTICA --- */
+        .hand-container {
             position: absolute;
-            font-size: 2.8rem;
             z-index: 99;
             opacity: 0;
             pointer-events: none;
+            left: 100%; /* Inizia fuori schermo a destra */
             top: 50%;
-            transform: translateY(-50%);
+            transform: translateY(-50%) rotate(-15deg);
         }
 
-        .swipe-next-animation {
-            animation: swipeLeftFX 0.6s ease-in-out forwards;
+        .hand-real-fx {
+            animation: handSwipeFX 0.5s ease-in-out forwards;
         }
 
-        .swipe-prev-animation {
-            animation: swipeRightFX 0.6s ease-in-out forwards;
+        @keyframes handSwipeFX {
+            0% { left: 100%; opacity: 0; transform: translateY(-50%) rotate(-15deg) scale(0.9); }
+            30% { opacity: 1; transform: translateY(-50%) rotate(0deg) scale(1); left: 75%; }
+            70% { opacity: 1; left: 15%; }
+            100% { left: 15%; opacity: 0; transform: translateY(-50%) rotate(15deg) scale(0.9); }
         }
 
-        @keyframes swipeLeftFX {
-            0% { left: 85%; opacity: 0; transform: translateY(-50%) scale(1); }
-            20% { opacity: 1; transform: translateY(-50%) scale(1.2); }
-            80% { left: 15%; opacity: 1; transform: translateY(-50%) scale(1); }
-            100% { left: 15%; opacity: 0; }
+page-indicator {
+            position: absolute; bottom: 15px; left: 0; width: 100%;
+            display: flex; justify-content: center; gap: 6px; z-index: 50;
         }
-
-        @keyframes swipeRightFX {
-            0% { left: 15%; opacity: 0; transform: translateY(-50%) scale(1) scaleX(-1); }
-            20% { opacity: 1; transform: translateY(-50%) scale(1.2) scaleX(-1); }
-            80% { left: 85%; opacity: 1; transform: translateY(-50%) scale(1) scaleX(-1); }
-            100% { left: 85%; opacity: 0; }
-        }
-
-        /* STILE INDICATORE PAGINA PAGINE */
-        .page-indicator {
-            position: absolute; bottom: 20px; left: 0; width: 100%;
-            display: flex; justify-content: center; gap: 8px; z-index: 50;
-        }
-        .dot { width: 8px; height: 8px; background: rgba(255,255,255,0.2); border-radius: 50%; transition: all 0.3s; }
-        .dot.active { background: var(--glow-cyan); box-shadow: 0 0 8px var(--glow-cyan); width: 18px; border-radius: 4px; }
+        .dot { width: 6px; height: 6px; background: rgba(0,0,0,0.15); border-radius: 50%; transition: all 0.2s; }
+        .dot.active { background: var(--primary-blue); box-shadow: 0 0 5px var(--primary-blue); width: 14px; border-radius: 3px; }
     </style>
 </head>
-<body>
+<body onclick="moveSlide(1)">
 
-<div class="presentation-container">
+<div class="device-container">
     
-    <div class="phone-container">
+    <div class="phone-mockup">
         <div class="notch"></div>
         
-        <div id="finger" class="virtual-finger">👆</div>
+        <div id="handFX" class="hand-container">
+            <img src="hand-mockup.png" alt="mano" style="width: 150px; height: auto;">
+        </div>
         
         <div class="phone-screen">
             <div class="slides-wrapper" id="slider">
@@ -202,15 +177,15 @@
                     </div>
                     <div class="content-card">
                         <div class="card-header">📍 System Initialization</div>
-                        <p class="card-body">9 Marzo: Ingresso in ambiente sconosciuto. Aspettative vs Realtà.</p>
+                        <p class="card-body">9 Marzo: Ingresso in ambiente sconosciuto. Dallo spaesamento alla consapevolezza.</p>
                     </div>
                     <div class="content-card">
-                        <div class="card-header">🧠 Oltre l'E-Learning</div>
-                        <p class="card-body">Rilevamento di una struttura complessa basata su progettazione e massima cura del dettaglio.</p>
+                        <div class="card-header">🧠 Basi e Strumenti</div>
+                        <p class="card-body">Corsi obbligatori: compliance aziendale archiviata. Impatto difficile con chatbot Arianna.</p>
                     </div>
                     <div class="content-card">
                         <div class="card-header">🚀 Innovazione Pratica</div>
-                        <p class="card-body">L'innovazione non è uno slogan: fa parte dell'architettura operativa quotidiana.</p>
+                        <p class="card-body">Dietro l'e-learning c'è un lavoro enorme di progettazione e attenzione al dettaglio.</p>
                     </div>
                 </div>
 
@@ -221,30 +196,30 @@
                     </div>
                     <div class="content-card">
                         <div class="card-header">💻 Architettura logica</div>
-                        <p class="card-body"><strong>Federica:</strong> Supporto nei blocchi tecnici critici.<br><strong>Martina & Arianna:</strong> Sviluppo logico di tutor e simulatori.</p>
+                        <p class="card-body"><strong>Federica:</strong> Supporto tecnico fondamentale.<br><strong>Martina & Arianna:</strong> Guida nelle logiche di tutor e simulatori.</p>
                     </div>
                     <div class="content-card">
                         <div class="card-header">👑 Strategic Leadership</div>
-                        <p class="card-body"><strong>Silvia:</strong> Gestione, equilibrio e coordinamento tra ingegneria e risorse umane. Una guida reale sul campo.</p>
+                        <p class="card-body"><strong>Silvia:</strong> Leadership incredibile. Gestione calmo di progetti, problemi e persone.</p>
                     </div>
                 </div>
 
                 <div class="slide">
                     <div class="slide-header">
                         <div class="slide-code">> RUNTIME_EXCEPTION</div>
-                        <h2 class="slide-title">La Nemesi: Alice</h2>
+                        <h2 class="slide-title">Le Sfide Tecniche</h2>
                     </div>
                     <div class="content-card">
-                        <div class="card-header">🤖 The Blocker</div>
-                        <p class="card-body">Centinaia di varianti di prompt, comportamenti instabili, cicli infiniti di revisione e debugging.</p>
+                        <div class="card-header">🤖 Alice Nemesis</div>
+                        <p class="card-body">Prompt riscritti da zero, test continui, errori, rollback e instabilità.</p>
                     </div>
                     <div class="content-card">
-                        <div class="card-header">⏳ Parallel Processing</div>
-                        <p class="card-body">Bilanciamento del carico di lavoro esterno: Scrittura Tesi + Master HR in contemporanea.</p>
+                        <div class="card-header">🌌 L'Orchestrazione</div>
+                        <p class="card-body">Lo step successivo: un altro mondo, complesso ma fondamentale.</p>
                     </div>
                     <div class="content-card">
-                        <div class="card-header">💡 Main Lesson</div>
-                        <p class="card-body">L'AI non è magia, è comportamento. A volte la semplificazione e il rollback logico vincono sull'over-engineering.</p>
+                        <div class="card-header">💡 Focus & Sintesi</div>
+                        <p class="card-body">La combo Tesi+Master HR ha ispirato il Public Speaking: imparare a mettere a fuoco l’essenziale.</p>
                     </div>
                 </div>
 
@@ -255,15 +230,15 @@
                     </div>
                     <div class="content-card">
                         <div class="card-header">🛠️ Consapevolezza Strutturale</div>
-                        <p class="card-body">Demistificazione dell'AI. Comprensione della logica e del codice dietro i modelli.</p>
+                        <p class="card-body">L'AI non è magia, è architettura (struttura, logica e lavoro dietro).</p>
                     </div>
                     <div class="content-card">
-                        <div class="card-header">🔄 Valore del Ciclo di Feedback</div>
-                        <p class="card-body">L'errore nel test non è un fallimento, ma l'unico parametro utile per ottimizzare.</p>
+                        <div class="card-header">🎮 SkillaLab Experience</div>
+                        <p class="card-body">Webinar divertentissimi, belli e utilissimi per imparare e staccare la testa.</p>
                     </div>
                     <div class="content-card">
                         <div class="card-header">🤝 Trattamento Paritetico</div>
-                        <p class="card-body">Inclusione totale nel team come risorsa reale del progetto, superando il concetto di "stagista".</p>
+                        <p class="card-body">Inclusione totale nel team come risorsa reale del progetto, non semplice "stagista".</p>
                     </div>
                 </div>
 
@@ -274,14 +249,14 @@
                     </div>
                     <div class="content-card" style="border-color: var(--glow-cyan);">
                         <div class="card-header" style="color: var(--glow-cyan);">🎯 Visione Futura</div>
-                        <p class="card-body">Chiusura del log con una direzione professionale chiara e nuove skill asincrone stabili (Excel, You&AI).</p>
+                        <p class="card-body">Chiusura del log con direzione chiara e nuove skill asincrone (Certificazione You&AI).</p>
                     </div>
                     <div class="content-card" style="background: rgba(0, 229, 255, 0.05);">
                         <p class="card-body" style="text-align: center; font-weight: bold; color: #fff;">
                             Grazie Silvia, Federica, Arianna & Martina.<br>Grazie Skilla.
                         </p>
                     </div>
-                    <p style="text-align: center; font-family: monospace; font-size: 0.8rem; color: var(--glow-cyan);">🚀 STATUS: SYSTEM STABLE [100%]</p>
+                    <p style="text-align: center; font-family: monospace; font-size: 0.8rem; color: var(--dark-purple);">STATUS: SYSTEM STABLE [100%]</p>
                 </div>
 
             </div>
@@ -306,34 +281,29 @@
     let currentSlide = 0;
     const totalSlides = 5;
     const slider = document.getElementById('slider');
-    const finger = document.getElementById('finger');
+    const handFX = document.getElementById('handFX');
     const dots = document.querySelectorAll('.dot');
     const prevBtn = document.getElementById('prevBtn');
     const nextBtn = document.getElementById('nextBtn');
 
     function moveSlide(direction) {
-        // Rimuove vecchie classi animazione per poterle resettare
-        finger.classList.remove('swipe-next-animation', 'swipe-prev-animation');
-        void finger.offsetWidth; // Forzatura del reflow CSS per far ripartire l'animazione
+        // Rimuove vecchia animazione per resettarla
+        handFX.classList.remove('hand-real-fx');
+        void handFX.offsetWidth; 
 
-        // Calcola la nuova posizione
         currentSlide += direction;
         
-        // Attiva l'animazione corretta del dito
-        if (direction === 1) {
-            finger.classList.add('swipe-next-animation');
-        } else {
-            finger.classList.add('swipe-prev-animation');
-        }
+        // Attiva animazione mano
+        handFX.classList.add('hand-real-fx');
 
-        // Sposta fisicamente le slide
+        // Sposta slide
         slider.style.transform = `translateX(-${currentSlide * 20}%)`;
 
-        // Aggiorna i bottoni di controllo
+        // Controlli bottoni
         prevBtn.disabled = currentSlide === 0;
         nextBtn.disabled = currentSlide === totalSlides - 1;
 
-        // Aggiorna gli indicatori (pallini)
+        // Punti indicatori
         dots.forEach((dot, index) => {
             if (index === currentSlide) {
                 dot.classList.add('active');
